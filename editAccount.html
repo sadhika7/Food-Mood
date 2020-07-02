@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Your Restaurant</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+
+  <!--Firebase authentication-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <span><img src="./img/FMW.jpg"></span>
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarText">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="accountButton">Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="homepage.html" id="signOut">Sign Out</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <header class="masthead text-gray text-center">
+    <div class="container-fluid">
+
+      <div class="bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+              <div class="card card-signin my-5">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Your Account Information</h5>
+
+
+                  <label for="userName">Name: </label>
+                  <input id="acc-name" name="acc-name" type="text" class="form-control acc-name" required
+                        autocomplete="acc-name" aria-required="true" aria-invalid="false"
+                        aria-describedby="acc-name-error" pattern="^[a-zA-Z\s]+">
+                  <span class="invalid-feedback">Enter your name</span>
+                  <!-- <input type="text" id="userName" class="form-control" required autofocus> -->
+
+                  <label for="userAddress">Address: </label>
+                  <input id="acc-addr" name="acc-addr" type="text" class="form-control acc-addr" required
+                        autocomplete="acc-addr" aria-required="true" aria-invalid="false"
+                        aria-describedby="acc-addr-error" pattern="^[0-9a-zA-Z\s]+">
+                  <span class="invalid-feedback">Enter your address</span>
+                  <!-- <input type="text" id="userAddress" class="form-control" required autofocus> -->
+
+                  <label for="userCity">City: </label>
+                  <input id="acc-city" name="acc-city" type="text" class="form-control acc-city" required
+                        autocomplete="acc-city" aria-required="true" aria-invalid="false"
+                        aria-describedby="acc-city-error" pattern="^[a-zA-Z\s]+">
+                  <span class="invalid-feedback">Enter your city</span>
+                  <!-- <input type="text" id="userCity" class="form-control" required autofocus> -->
+
+                  <label for="userState">State: </label>
+                  <input id="acc-state" name="acc-state" type="text" class="form-control acc-state" required
+                        autocomplete="acc-state" aria-required="true" aria-invalid="false"
+                        aria-describedby="acc-state-error" pattern="^[a-zA-Z\s]">
+                  <span class="invalid-feedback">Enter your state</span>
+                  <!-- <input type="text" id="userState" class="form-control" required autofocus> -->
+
+                  <label for="userZip">Zip: </label>
+                  <input id="acc-zip" name="acc-zip" type="text" class="form-control acc-zip" required
+                        autocomplete="acc-zip" aria-required="true" aria-invalid="false"
+                        aria-describedby="acc-zip-error" pattern="^[0-9]{5}">
+                  <span class="invalid-feedback">Enter your zip</span>
+                  <!-- <input type="text" id="userZip" class="form-control" required autofocus> -->
+
+                  <label for="userPhone">Phone Number: </label>
+                  <input id="acc-phone" name="acc-phone" type="text" class="form-control acc-phone" required
+                        autocomplete="acc-phone" aria-required="true" aria-invalid="false"
+                        aria-describedby="acc-phone-error" pattern="^[0-9]{10}">
+                  <span class="invalid-feedback">Enter your phone number</span>
+                  <!-- <input type="text" id="userPhone" class="form-control" required autofocus> -->
+
+                  <h5 style="color:red; font-style:italic; " id="errorHeader"></h5>
+                  <input type="submit" value="Save Changes" id="saveButton"
+                    class="btn btn-lg btn-info btn-block text-uppercase">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <p class="lead mb-0">Order your favourite meal from your favourite restaurant!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <p class="lead mb-0">Place an order and chill! Your food will be on the way!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <p class="lead mb-0">Expect to have a very smooth food mood experience!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Food Mood 2019. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/firebase.js"></script>
+  <script src="js/signOut.js"></script>
+  <script src="js/editAccount.js"></script>
+
+
+</body>
+
+</html>

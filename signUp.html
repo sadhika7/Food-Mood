@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Mood</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+
+
+</head>
+
+<body style="background-image:url('./img/bg.jpg')";background-repeat:"no-repeat";>
+
+  <div class="header">
+    <div class="container">
+      <img src="./img/fm.jpg">
+    </div>
+  </div>
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up with Food Mood!</h5>
+
+              <label for="textEmail">Email address</label>
+            <input type="email" id="textEmail" class="form-control" placeholder="Email address" required autofocus>
+
+            <label for="textPassword">Password</label>
+            <input type="password" id="textPassword" class="form-control" placeholder="Password" required>
+
+              <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password">
+
+            <label for="name">Name</label>
+            <input type="Name" id="name" class="form-control" placeholder="Name">
+
+            <label for="address">Street Address</label>
+            <input type="text" id="address" class="form-control" placeholder="Street Address">
+
+              <label for="city">City</label>
+            <input type="text" id="city" class="form-control" placeholder="City">
+
+            <label for="state">State</label>
+            <input type="text" id="state" class="form-control" placeholder="State">
+
+            <label for="zipCode">Zip Code</label>
+            <input type="text" id="zipCode" class="form-control" placeholder="Zip Code">
+
+            <label for="phoneNum">Phone Number</label>
+            <input type="text" id="phoneNum" class="form-control" placeholder="Phone Number">
+
+
+            <br>
+            <h6>Choose your role:</h6>
+            <input type="radio" name="role" value="Customer" style="margin:5px;">Customer<br>
+            <input type="radio" name="role" value="Manager" style="margin:5px;">Manager<br>
+            <input type="radio" name="role" value="Deliverer" style="margin:5px;">Deliverer<br>
+
+            <p id="errorHeader"></p>
+            <a href="passwordReset.html">Forgot password?</a><br>
+            <a href="signIn.html">Already a member?</a>
+
+            <button id="btnSignUp" class="btn btn-lg btn-info btn-block btn-action text-uppercase" type="submit">Sign
+              Up</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/firebase.js"></script>
+  <script src="js/signUp.js"></script>
+
+</body>
+
+</html>

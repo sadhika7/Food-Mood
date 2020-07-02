@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Food Mood</title>
+
+  <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/landing-page.min.css" rel="stylesheet">
+
+<!--Firebase authentication-->
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+  <div class="header">
+  <nav class="navbar static-top">
+    <div class="container">
+      <img src="./img/fm.jpg">
+      <div class="bttn">
+      <a onclick="location.href='homepage.html'" id="signOut" class="btn btn-action" href="#">Sign Out</a>
+      <a href="manager.html"><button type="submit" class="btn btn-action">Account Dashboard</button></a>
+      </div>
+
+    </div>
+  </nav>
+</div>
+
+<header class="masthead text-gray text-center">
+  <section class="container">
+    <div class="jumbotron">
+        <h3>Add Information about your Menu!</h3>
+          Food name:<br>
+          <input type="text" id="FoodName">
+          <br>
+          Food price: $<br>
+          <input type="double" id="FoodPrice">
+          <br>
+          <h1 id="errorHeader"></h1>
+          <input type="submit" value="Submit" id="Sbutton">
+        </div>
+    </section>
+  </header>
+
+
+
+    <script src="js/firebase.js"></script>
+    <script src="js/signOut.js"></script>
+    <script src="js/editFood.js"></script>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="#">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Contact</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Food Mood 2019. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Food Mood</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+
+  <!--Firebase authentication-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+  <div class="header">
+    <nav class="navbar static-top">
+      <div class="container">
+        <img src="./img/fm.jpg">
+        <div class="bttn">
+
+          <button type="submit" class="btn btn-info" id="restPage">Restaurant Page</button>
+
+          <button type="submit" class="btn btn-info" onclick="location.href='manager.html'">Account Dashboard</button>
+
+          <button onclick="location.href='homepage.html'" id="signOut" class="btn btn-info" href="#">Sign Out</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <header class="masthead text-gray text-center">
+    <div class="row">
+      <div class="container">
+        <div class="container1">
+          <div class="jumbotron text-center col-md-6" style="margin:15px;">
+            <h4 style="color:#4169e1">Menu</h4>
+
+            Menu name:<br>
+            <input type="text" id="menuName">
+            <br>
+            <br>
+            <button type="submit" value="Submit" id="Sbutton" class="btn btn-success">Save Changes</button>
+            <button type="submit" value="DELETE MENU" id="DeleteMenuButton" class="btn btn-danger">Delete Menu</button>
+          </div>
+          <div class="jumbotron text-center col-md-6" style="margin:15px;">
+            <h4 style="color:#4169e1">Food Items</h4>
+            <br>
+            Food name:
+            <input type="text" id="newFoodName">
+            <br>
+            <br>
+            Food price: $
+            <input type="double" id="newFoodPrice">
+            <br>
+            <br>
+            Veg/ Non-Veg:
+            <input type="text" id="newDescription">
+            <br>
+            <br>
+            Spice Level:
+            <input type="double" id="newSpiceLevel">
+            <br>
+            <br>
+            <button type="submit" value="Add Item" id="AddFoodButton" class="btn btn-success">Add Food Item</button>
+            <br>
+            <br>
+            <p id="errorHeader"></p>
+            <div class="fix">
+              <br>
+              <br>
+              <div id=foodDuplicator>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/signOut.js"></script>
+  <script src="js/editMenu.js"></script>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Food Mood 2019. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
